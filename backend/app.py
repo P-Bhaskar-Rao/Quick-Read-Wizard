@@ -28,9 +28,12 @@ app.config["SESSION_COOKIE_SAMESITE"] = "None"
 app.config["SESSION_COOKIE_SECURE"] = True
 Session(app)
 
-PORT=os.getenv('CORS_ORIGINS')
+CORS_ORIGIN1=os.getenv('CORS_ORIGIN1')
+CORS_ORIGIN2=os.getenv('CORS_ORIGIN3')
+CORS_ORIGIN3=os.getenv('CORS_ORIGIN3')
+PORT=os.getenv('PORT')
 CORS(app, 
-     origins=["http://localhost:5173",],
+     origins=[CORS_ORIGIN1,CORS_ORIGIN2,CORS_ORIGIN3,'https://localhost:5173'],
      supports_credentials=True,
      allow_headers=["Content-Type", "Authorization"],
      methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"])
